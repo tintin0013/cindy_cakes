@@ -30,7 +30,6 @@ supprimer($database);
 
 <div class="page_suppression">
     <h1>
-
         <a href="./formulaire_photo.php">retour liste photos</a>
     </h1>
 </div>
