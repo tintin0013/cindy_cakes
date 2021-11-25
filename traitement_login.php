@@ -3,6 +3,11 @@ session_start();
 include "connexion.php";
 include "clean.php";
 
+if (!isset($_SESSION["user"])) {
+
+    header("location: ./index.php");
+}
+
 
 $login = clean($_POST['login']);
 $password = $_POST['password'];

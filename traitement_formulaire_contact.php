@@ -5,6 +5,8 @@ include "connexion.php";
 include "clean.php";
 include("header.php");
 
+
+
 $nom = clean($_POST['nom']);
 $email = $_POST['email'];
 $message = clean($_POST['message']);
@@ -21,7 +23,8 @@ $regexEmail = '/^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/';
 
 
         if (preg_match($regexEmail, $_POST['email'])) {
-            $postCommentaire_sql = "INSERT INTO commentaire_client (nom_client, commentaire_client, email_client) VALUES ('$nom', '$message', '$email')";
+            $postCommentaire_sql = "INSERT INTO commentaire_client (nom_client, commentaire_client, email_client)
+             VALUES ('$nom', '$message', '$email')";
 
             $postCommentaire = $database->prepare($postCommentaire_sql);
             $postCommentaire->execute([$nom, $email, $message]);

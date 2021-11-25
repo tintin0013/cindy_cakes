@@ -4,6 +4,11 @@ session_start();
 include "connexion.php";
 include("header.php");
 
+if (!isset($_SESSION["user"])) {
+
+    header("location: ./index.php");
+}
+
 
 
 // var_dump($_POST);
